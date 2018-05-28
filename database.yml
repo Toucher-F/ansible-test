@@ -1,0 +1,5 @@
+---
+  - hosts: database
+    tasks:
+      - name: install mysl-server
+        apt: name=mysql-server state=present update_cache=yes
