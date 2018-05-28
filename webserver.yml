@@ -1,0 +1,11 @@
+___
+- hosts: webserver
+  become: true
+  tasks:
+    - name: install apache2
+      apt: name={{item}} state=present update_cach=yes
+      with_items:
+        - apache2
+        - libapache2-mod-wsgi
+        - python-pip
+        - python-virtualenv
